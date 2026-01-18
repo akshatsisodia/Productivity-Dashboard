@@ -10,38 +10,72 @@ body {
   width: 100%;
 }
 
-body{
-    background-color: #acc18a;
-    color: white;
+:root{
+    --pri: #222222;  /* backgrounds,LargeSections */
+    --sec: #F5E7C6;  /* headings, sub-sections) */
+    --tri: #5B23FF;  /* CTAs */
+}
+
+@font-face {
+    font-family: aeonik-regular;
+    font-weight: 500;
+    src: url(./fonts/Aeonik-Regular.ttf);
+}
+
+@font-face {
+    font-family: aeonik-light;
+    font-weight: 300;
+    src: url(./fonts/Aeonik-Light.ttf);
+}
+
+@font-face {
+    font-family: aeonik-bold;
+    font-weight: 700;
+    src: url(./fonts/Aeonik-Bold.ttf);
+}
+
+@font-face {
+    font-family: aeonik-bold-italic;
+    src: url(./fonts/Aeonik-BoldItalic.ttf);
 }
 
 main{
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     padding: 20px;
+    background-color: var(--pri);
 }
 
-.nav{
-    height: 10vh;
+nav{
+    height: 50px;
     width: 100%;
-    background-color: #11212D;
+    background-color: var(--tri);
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 20px;
+    padding: 40px 30px;
+}
+
+nav h2{
+   font-family: aeonik-light;
+   font-size: 1.5rem;
+   color: var(--sec);
 }
 
 .btn{
     padding: 12px 20px;
     border-radius: 10px;
     border: none;
-    background-color: #9BA8AB;
-    font-weight: 600;
-    font-size: 14px;
+    background-color: var(--pri);
+    color: var(--sec);
+    font-size: 1rem;
     cursor: pointer;
+    font-family: aeonik-regular;
 }
 
 .btn:active{
     scale: 0.99;
 }
+
+
