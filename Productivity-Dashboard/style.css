@@ -1,8 +1,39 @@
+:root {
+  --pri: #222222; /* backgrounds,LargeSections */
+  --sec: #f5e7c6; /* headings, sub-sections) */
+  --tri: #5b23ff; /* CTAs */
+}
+
+@font-face {
+  font-family: aeonik-light;
+  font-weight: 300;
+  src: url(./fonts/Aeonik-Light.ttf);
+}
+
+@font-face {
+  font-family: aeonik-regular;
+  font-weight: 500;
+  src: url(./fonts/Aeonik-Regular.ttf);
+}
+
+@font-face {
+  font-family: aeonik-bold;
+  font-weight: 700;
+  src: url(./fonts/Aeonik-Bold.ttf);
+}
+
+@font-face {
+  font-family: aeonik-bold-italic;
+  font-weight: 500;
+  src: url(./fonts/Aeonik-BoldItalic.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: aeonik-regular;
+  color: var(--sec);
 }
 html,
 body {
@@ -10,72 +41,91 @@ body {
   width: 100%;
 }
 
-:root{
-    --pri: #222222;  /* backgrounds,LargeSections */
-    --sec: #F5E7C6;  /* headings, sub-sections) */
-    --tri: #5B23FF;  /* CTAs */
-}
-
-@font-face {
-    font-family: aeonik-regular;
-    font-weight: 500;
-    src: url(./fonts/Aeonik-Regular.ttf);
-}
-
-@font-face {
-    font-family: aeonik-light;
-    font-weight: 300;
-    src: url(./fonts/Aeonik-Light.ttf);
-}
-
-@font-face {
-    font-family: aeonik-bold;
-    font-weight: 700;
-    src: url(./fonts/Aeonik-Bold.ttf);
-}
-
-@font-face {
-    font-family: aeonik-bold-italic;
-    src: url(./fonts/Aeonik-BoldItalic.ttf);
-}
-
-main{
-    height: 100%;
-    width: 100%;
-    padding: 20px;
-    background-color: var(--pri);
+.main {
+  height: 100%;
+  width: 100%;
+  background-color: var(--pri);
 }
 
 nav{
-    height: 50px;
+    position: fixed;
+    height: 60px;
     width: 100%;
     background-color: var(--tri);
+    z-index: 8;
+}
+
+section.allElems{
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    padding-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.elem{
+    height: 400px;
+    width: 310px;
     border-radius: 10px;
+    text-transform: capitalize;
+    overflow: hidden;
+    position: relative;
+    transition: all ease 0.4s;
+    cursor: pointer;
+}
+
+.elem img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.elem h2{
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    font-size: 22px;
+}
+
+.elem:active{
+    scale: 0.98;
+}
+
+.fullElem{
+    position: absolute;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    padding: 30px 40px;
+    background-color: var(--pri);
+    display: none;
+    z-index: 9;
+}
+
+.fullElem .content{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px 30px;
 }
 
-nav h2{
-   font-family: aeonik-light;
-   font-size: 1.5rem;
-   color: var(--sec);
+.fullElem h2{
+    font-size: 70px;
+    text-transform: capitalize;
 }
 
-.btn{
-    padding: 12px 20px;
-    border-radius: 10px;
+.fullElem .back-btn{
+    height: 50px;
+    width: 100px;
+    background-color: red;
+    font-size: 25px;
     border: none;
-    background-color: var(--pri);
-    color: var(--sec);
-    font-size: 1rem;
+    border-radius: 10px;
+    transition: all ease 0.2s;
     cursor: pointer;
-    font-family: aeonik-regular;
 }
 
-.btn:active{
-    scale: 0.99;
+.back-btn:active{
+    scale: 0.97;
 }
-
-
